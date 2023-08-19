@@ -8,7 +8,7 @@ import { AddBtn,StyledError, Label, MainForm, Input } from './Form.styled'
 
 
 const schema = Yup.object().shape({
-    name: Yup.string().min(1, 'Too Short!').max(16, 'to long').required('Required'),
+    name: Yup.string().min(3, 'Too Short!').max(32, 'to long').required('Required'),
     number: Yup.string().min(7, 'Too Short!').max(10, 'to long').required('Required')
 });
 
