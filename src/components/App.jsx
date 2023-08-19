@@ -20,22 +20,25 @@ export default class App extends Component {
 
   handleSubmit = (values, { resetForm }) => {
     resetForm();
-      {
-        this.state.contacts.find(contact =>
-        contact.name.toLowerCase() === (values.name.toLowerCase())) ?
-        alert(`${values.name} is already in contacts`) :
-        this.setState(prevState => {
-        return {
-          contacts:
-            [...prevState.contacts, {
-              id: nanoid(),
-              name: values.name,
-              number: values.number
-          }],
-        };
-      })
+
+    const existingContact = this.state.contacts.find(
+      contact => contact.name.toLowerCase() === values.name.toLowerCase()
+    );
+
+    if (existingContact) {
+      alert(`${values.name} is already in contacts`);
+    } else {
+      const newContact = {
+        id: nanoid(),
+        name: values.name,
+        number: values.number
+      };
+
+      this.setState(prevState => ({
+        contacts: [...prevState.contacts, newContact]
+      }));
     }
-  };
+    };
 
   filterOnChange = e => {
     this.setState({
