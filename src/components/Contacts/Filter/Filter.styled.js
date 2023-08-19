@@ -6,5 +6,9 @@ export const FilterInput = styled.input`
     padding: 16px;
     font-size: 22px;
     border-radius: 5px;
-    width: 306px;
+    width: 400px;
+    border: 2px solid blue;
+    padding: ${props => props.theme.spacing(4)};
+    font-size: ${props => props.theme.spacing(4)};
+    border-radius: ${props => props.theme.spacing(3)};
 ` 

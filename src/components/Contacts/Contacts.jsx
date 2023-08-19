@@ -1,20 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {List} from './Contacts.styled'
+import {List, Label} from './Contacts.styled'
 import { ContactItem } from './ContactItem/ContactItem';
 import { Filter } from './Filter/Filter';
 
 export const Contacts = ({contacts, onChange, value, onClick}) => {
     return (
         <>
-            <label>
+            <Label>
                 Find contacts by name
                 <Filter
                     onChange={onChange}
                     value={value}
                 />
-            </label>
+            </Label>
             <List>
                 {contacts.map(el =>
                     <ContactItem
